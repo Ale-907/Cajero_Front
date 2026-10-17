@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Pagos y Facturas
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="dashboard.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="operaciones.html" class="nav-link">
+            ＋
+            <span>
+              Consignar / Retirar
+            </span>
+          </a>
+          <a href="dashboard.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Inicio
+            </span>
+          </a>
+          <a href="cuentas.html" class="nav-link">
+            <i class="fa-solid fa-wallet">
+            </i>
+            <span>
+              Cuentas
+            </span>
+          </a>
+          <a href="tarjeta.html" class="nav-link">
+            <i class="fa-solid fa-credit-card">
+            </i>
+            <span>
+              Tarjetas
+            </span>
+          </a>
+          <a href="transferencias.html" class="nav-link">
+            <i class="fa-solid fa-arrow-right-arrow-left">
+            </i>
+            <span>
+              Transferencias
+            </span>
+          </a>
+          <a href="pagos.html" class="nav-link active">
+            <i class="fa-solid fa-money-bill-transfer">
+            </i>
+            <span>
+              Pagos
+            </span>
+          </a>
+          <a href="movimientos.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left">
+            </i>
+            <span>
+              Movimientos
+            </span>
+          </a>
+          <a href="perfil.html" class="nav-link">
+            <i class="fa-solid fa-user">
+            </i>
+            <span>
+              Perfil
+            </span>
+          </a>
+          <a href="cerrar_sesion.html" class="nav-link" style="margin-top:auto; color:var(--peligro);">
+            <i class="fa-solid fa-arrow-right-from-bracket">
+            </i>
+            <span>
+              Cerrar sesión
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Pagos
+            </strong>
+          </div>
+          <div class="topbar-actions" style="margin-left:auto;">
+            <a href="perfil.html" class="user-profile-badge">
+              <img id="topbar-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar">
+            </a>
+          </div>
+        </header>
+        <main class="content-area">
+          <div class="greeting-header">
+            <h1>
+              Pagos
+            </h1>
+            <p>
+              Primero elige qué vas a pagar. Después selecciona la cuenta desde la que saldrá el dinero.
+            </p>
+          </div>
+          <div class="resumen-productos">
+            <section class="panel">
+              <h2>
+                Capital pendiente
+              </h2>
+              <strong id="credito-capital">
+              </strong>
+              <p>
+                Lo que falta por pagar de tus compras, sin intereses futuros.
+              </p>
+              <p id="credito-cupo">
+              </p>
+            </section>
+            <section class="panel">
+              <h2>
+                Pago mínimo simulado
+              </h2>
+              <strong id="credito-minimo">
+              </strong>
+              <p id="credito-periodo">
+              </p>
+              <p>
+                Incluye capital e interés del primer mes pendiente.
+              </p>
+            </section>
+            <section class="panel">
+              <h2>
+                Total de cuotas pendientes
+              </h2>
+              <strong id="credito-total">
+              </strong>
+              <p id="credito-intereses">
+              </p>
+              <p>
+                Suma del plan completo; no es el valor de una liquidación anticipada.
+              </p>
+            </section>
+          </div>
+          <div class="pagos-layout-grid">
+            <section class="pagos-form-box">
+              <h2>
+                ¿Qué quieres pagar?
+              </h2>
+              <form onsubmit="pagar(event)">
+                <div class="campo">
+                  <label for="categoria">
+                    1. Tipo de pago
+                  </label>
+                  <select id="categoria" onchange="cambiarCategoriaPago()">
+                    <option value="tarjeta">
+                      Mi tarjeta de crédito — cuotas de productos
+                    </option>
+                    <option value="servicio">
+                      Una factura de servicios
+                    </option>
+                    <option value="recarga">
+                      Una recarga de celular
+                    </option>
+                    <option value="impuesto">
+                      Un impuesto
+                    </option>
+                  </select>
+                </div>
+                <div id="pago-tarjeta">
+                  <div class="campo">
+                    <label for="pago-compra">
+                      2. ¿Qué cuotas de la tarjeta pagarás?
+                    </label>
+                    <select id="pago-compra" onchange="actualizarPago()">
+                    </select>
+                  </div>
+                  <p id="lista-cuotas-pago" class="aviso">
+                  </p>
+                  <a href="tarjeta.html">
+                    Crear productos o ajustar sus cuotas
+                  </a>
+                </div>
+                <div id="pago-externo" hidden>
+                  <div class="campo">
+                    <label for="entidad">
+                      2. Empresa, operador o entidad a pagar
+                    </label>
+                    <input type="text" id="entidad" oninput="actualizarPago()" maxlength="80" placeholder="Ejemplo: EPM, Claro o Alcaldía" required>
+                  </div>
+                  <div class="campo">
+                    <label for="referencia">
+                      Referencia de factura o número de celular
+                    </label>
+                    <input type="text" id="referencia" oninput="actualizarPago()" maxlength="50" required>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="origen">
+                    3. Cuenta desde la que pagarás
+                  </label>
+                  <select id="origen" onchange="actualizarPago()">
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="monto">
+                    4. Valor a pagar (COP)
+                  </label>
+                  <input type="number" id="monto" min="0.01" step="0.01" oninput="actualizarPago()" required>
+                </div>
+                <p class="resumen" id="ayuda-monto">
+                </p>
+                <button id="btn-pagar" type="submit" class="btn btn-primary">
+                  Revisar y confirmar pago
+                </button>
+              </form>
+            </section>
+            <aside class="panel">
+              <h2>
+                Resumen antes de pagar
+              </h2>
+              <div id="resumen-pago" class="detalle-pago" aria-live="polite">
+              </div>
+              <p>
+                En la tarjeta se pagan cuotas completas. Puedes pagar el mínimo del periodo o la próxima cuota de un producto específico.
+              </p>
+              <p class="resumen">
+                Solo el capital pagado libera cupo. El interés también se descuenta de la cuenta de origen.
+              </p>
+            </aside>
+          </div>
+          <p id="mensaje-pago" class="mensaje" role="status" hidden>
+          </p>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/vistas.js">
+    </script>
+    <script src="js/pagos.js">
+    </script>
+  </body>
+</html>

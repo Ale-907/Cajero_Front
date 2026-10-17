@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Iniciar sesión
+    </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="acceso">
+    <main class="panel acceso-panel">
+      <a href="index.html" class="logo-text">
+        BancoNova
+      </a>
+      <h1>
+        Iniciar sesión
+      </h1>
+      <form onsubmit="iniciarSesion(event)">
+        <div class="campo">
+          <label for="log-user">
+            Usuario
+          </label>
+          <input type="text" id="log-user" required>
+        </div>
+        <div class="campo">
+          <label for="log-pass">
+            Contraseña
+          </label>
+          <input type="password" id="log-pass" required>
+        </div>
+        <p id="intentos-txt" class="resumen">
+          Tienes 3 intentos.
+        </p>
+        <button class="btn btn-primary" type="submit">
+          Ingresar
+        </button>
+      </form>
+      <p class="resumen">
+        ¿Aún no tienes cuenta?
+        <a href="registro.html">
+          Registrarme
+        </a>
+      </p>
+      <a href="index.html">
+        Volver al inicio
+      </a>
+    </main>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/auth.js">
+    </script>
+  </body>
+</html>

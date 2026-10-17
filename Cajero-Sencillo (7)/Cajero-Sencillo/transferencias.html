@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Transferencias
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="dashboard.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="operaciones.html" class="nav-link">
+            ＋
+            <span>
+              Consignar / Retirar
+            </span>
+          </a>
+          <a href="dashboard.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Inicio
+            </span>
+          </a>
+          <a href="cuentas.html" class="nav-link">
+            <i class="fa-solid fa-wallet">
+            </i>
+            <span>
+              Cuentas
+            </span>
+          </a>
+          <a href="tarjeta.html" class="nav-link">
+            <i class="fa-solid fa-credit-card">
+            </i>
+            <span>
+              Tarjetas
+            </span>
+          </a>
+          <a href="transferencias.html" class="nav-link active">
+            <i class="fa-solid fa-arrow-right-arrow-left">
+            </i>
+            <span>
+              Transferencias
+            </span>
+          </a>
+          <a href="pagos.html" class="nav-link">
+            <i class="fa-solid fa-money-bill-transfer">
+            </i>
+            <span>
+              Pagos
+            </span>
+          </a>
+          <a href="movimientos.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left">
+            </i>
+            <span>
+              Movimientos
+            </span>
+          </a>
+          <a href="perfil.html" class="nav-link">
+            <i class="fa-solid fa-user">
+            </i>
+            <span>
+              Perfil
+            </span>
+          </a>
+          <a href="cerrar_sesion.html" class="nav-link" style="margin-top:auto; color:var(--peligro);">
+            <i class="fa-solid fa-arrow-right-from-bracket">
+            </i>
+            <span>
+              Cerrar sesión
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Transferencias
+            </strong>
+          </div>
+          <div class="topbar-actions" style="margin-left:auto;">
+            <a href="perfil.html" class="user-profile-badge">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar">
+            </a>
+          </div>
+        </header>
+        <main class="content-area">
+          <div class="greeting-header">
+            <h1>
+              Transferencias
+            </h1>
+            <p>
+              Selecciona de dónde sale el dinero y a dónde llegará. Los pagos de compras se realizan en Pagos.
+            </p>
+          </div>
+          <div class="dos-columnas">
+            <section class="panel">
+              <form onsubmit="transferir(event)">
+                <div class="campo">
+                  <label for="tipo-transferencia">
+                    1. ¿A dónde quieres enviar?
+                  </label>
+                  <select id="tipo-transferencia" onchange="cambiarDestino()">
+                    <option value="propia">
+                      Entre mis cuentas de BancoNova
+                    </option>
+                    <option value="banco">
+                      A una cuenta de otro banco (simulado)
+                    </option>
+                    <option value="celular">
+                      A un número de celular (simulado)
+                    </option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="origen">
+                    2. Cuenta de origen — de aquí sale el dinero
+                  </label>
+                  <select id="origen" onchange="cambiarDestino()">
+                  </select>
+                </div>
+                <div id="destino-propio">
+                  <div class="campo">
+                    <label for="destino">
+                      3. Cuenta de destino — aquí llega el dinero
+                    </label>
+                    <select id="destino" onchange="resumirTransferencia()">
+                    </select>
+                  </div>
+                </div>
+                <div id="destino-externo" hidden>
+                  <div class="campo">
+                    <label for="destinatario">
+                      3. Nombre del destinatario
+                    </label>
+                    <input type="text" id="destinatario" maxlength="80" oninput="resumirTransferencia()" required>
+                  </div>
+                  <div id="datos-banco">
+                    <div class="campo">
+                      <label for="banco">
+                        Banco de destino
+                      </label>
+                      <select id="banco" onchange="resumirTransferencia()">
+                        <option value="Bancolombia">
+                          Bancolombia
+                        </option>
+                        <option value="Davivienda">
+                          Davivienda
+                        </option>
+                        <option value="BBVA">
+                          BBVA
+                        </option>
+                        <option value="Otro banco">
+                          Otro banco
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="campo">
+                    <label for="numero-destino">
+                      Número de cuenta o celular
+                    </label>
+                    <input type="text" id="numero-destino" inputmode="numeric" maxlength="20" oninput="resumirTransferencia()" required>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="monto">
+                    4. Monto a enviar (COP)
+                  </label>
+                  <input type="number" id="monto" min="0.01" step="0.01" oninput="resumirTransferencia()" required>
+                </div>
+                <button id="btn-transferir" type="submit" class="btn btn-primary">
+                  Revisar y confirmar transferencia
+                </button>
+              </form>
+            </section>
+            <aside class="panel">
+              <h2>
+                Así quedará tu transferencia
+              </h2>
+              <div id="resumen-transferencia" class="detalle-pago" aria-live="polite">
+              </div>
+              <p>
+                Comisión del ejercicio: $0 COP.
+              </p>
+              <p class="resumen">
+                Entre tus cuentas se registra la salida y la entrada. Un envío externo se simula: descuenta el dinero de origen, pero no conecta con bancos ni operadores.
+              </p>
+              <a href="pagos.html?categoria=tarjeta">
+                Quiero pagar una cuota de mi tarjeta
+              </a>
+            </aside>
+          </div>
+          <p id="mensaje-transferencia" class="mensaje" role="status" hidden>
+          </p>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/vistas.js">
+    </script>
+    <script src="js/transferencias.js">
+    </script>
+  </body>
+</html>

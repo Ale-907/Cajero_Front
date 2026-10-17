@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Registro (Sign Up)
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="index.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="index.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Inicio
+            </span>
+          </a>
+          <a href="cuentas.html" class="nav-link">
+            <i class="fa-solid fa-wallet">
+            </i>
+            <span>
+              Cuentas
+            </span>
+          </a>
+          <a href="tarjeta.html" class="nav-link">
+            <i class="fa-solid fa-credit-card">
+            </i>
+            <span>
+              Tarjetas
+            </span>
+          </a>
+          <a href="transferencias.html" class="nav-link">
+            <i class="fa-solid fa-arrow-right-arrow-left">
+            </i>
+            <span>
+              Transferencias
+            </span>
+          </a>
+          <a href="pagos.html" class="nav-link">
+            <i class="fa-solid fa-money-bill-transfer">
+            </i>
+            <span>
+              Pagos
+            </span>
+          </a>
+          <a href="movimientos.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left">
+            </i>
+            <span>
+              Movimientos
+            </span>
+          </a>
+          <a href="perfil.html" class="nav-link">
+            <i class="fa-solid fa-user">
+            </i>
+            <span>
+              Perfil
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Crear cuenta
+            </strong>
+          </div>
+          <div class="topbar-actions" style="margin-left:auto;">
+            <a href="perfil.html" class="user-profile-badge">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar">
+            </a>
+          </div>
+        </header>
+        <main class="content-area">
+          <div class="greeting-header">
+            <h1>
+              Crear una cuenta
+            </h1>
+            <p>
+              Completa tus datos para utilizar el simulador.
+            </p>
+          </div>
+          <div class="signup-layout">
+            <section class="panel">
+              <form onsubmit="registrarUsuario(event)">
+                <div class="campo">
+                  <label for="reg-id">
+                    Identificación
+                  </label>
+                  <input type="text" id="reg-id" maxlength="15" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-nombre">
+                    Nombre completo
+                  </label>
+                  <input type="text" id="reg-nombre" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-cel">
+                    Celular
+                  </label>
+                  <input type="tel" id="reg-cel" pattern="[0-9]{10}" maxlength="10" title="Ingresa 10 números" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-email">
+                    Correo electrónico
+                  </label>
+                  <input type="email" id="reg-email" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-user">
+                    Usuario
+                  </label>
+                  <input type="text" id="reg-user" minlength="3" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-pass">
+                    Contraseña
+                  </label>
+                  <input type="password" id="reg-pass" minlength="6" required>
+                </div>
+                <div class="campo">
+                  <label for="reg-pass2">
+                    Confirmar contraseña
+                  </label>
+                  <input type="password" id="reg-pass2" minlength="6" required>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Registrarme
+                </button>
+              </form>
+            </section>
+            <aside class="security-card-blue">
+              <h3>
+                Tu banco digital
+              </h3>
+              <p>
+                Al registrarte tendrás dos cuentas de práctica y una tarjeta de crédito de prueba.
+              </p>
+              <a href="auth.html" class="btn btn-white">
+                Ya tengo cuenta
+              </a>
+            </aside>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/registro.js">
+    </script>
+  </body>
+</html>

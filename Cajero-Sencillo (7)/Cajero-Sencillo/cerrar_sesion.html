@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Sesión Cerrada
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="index.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="index.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Página Principal
+            </span>
+          </a>
+          <a href="auth.html" class="nav-link">
+            <i class="fa-solid fa-right-to-bracket">
+            </i>
+            <span>
+              Iniciar Sesión
+            </span>
+          </a>
+          <a href="registro.html" class="nav-link">
+            <i class="fa-solid fa-user-plus">
+            </i>
+            <span>
+              Registrarme
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Sesión cerrada
+            </strong>
+          </div>
+          <div class="topbar-actions" style="display:flex; gap:10px; margin-left:auto;">
+            <a href="auth.html" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-right-to-bracket">
+              </i>
+              Iniciar sesión
+            </a>
+            <a href="registro.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-user-plus">
+              </i>
+              Registrarme
+            </a>
+          </div>
+        </header>
+        <main class="content-area" style="display:flex; align-items:center; justify-content:center; min-height:calc(100vh - 120px);">
+          <div class="logout-centered-card" style="margin:20px auto; width:100%; max-width:500px;">
+            <div class="logout-big-lock" style="background:#ecfdf5; color:var(--exito);">
+              <i class="fa-solid fa-shield-halved">
+              </i>
+            </div>
+            <h2 style="font-size:22px; font-weight:800; color:var(--azul-noche); margin-bottom:6px;">
+              Sesión cerrada de forma segura
+            </h2>
+            <p style="font-size:13.5px; color:var(--texto-muted); line-height:1.5;">
+              Has cerrado la sesión del simulador. Tus datos de práctica siguen guardados en este navegador.
+              <br>
+              Gracias por confiar en BancoNova.
+            </p>
+            <div class="logout-stars" style="color:#f59e0b; font-size:18px; margin:16px 0 22px; letter-spacing:4px;">
+              <i class="fa-solid fa-star">
+              </i>
+              <i class="fa-solid fa-star">
+              </i>
+              <i class="fa-solid fa-star">
+              </i>
+              <i class="fa-solid fa-star">
+              </i>
+              <i class="fa-solid fa-star">
+              </i>
+            </div>
+            <div style="background:#f8fafc; border:1px solid var(--borde); border-radius:10px; padding:16px; margin-bottom:22px; text-align:center;">
+              <strong style="display:block; font-size:13.5px; color:var(--azul-noche); margin-bottom:4px;">
+                ¿Deseas volver a ingresar o crear una nueva cuenta?
+              </strong>
+              <small style="font-size:12px; color:var(--texto-muted);">
+                Accede a tu banca digital o regístrate en menos de 2 minutos.
+              </small>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+              <a href="auth.html" class="btn btn-primary btn-block" style="padding:12px; font-size:14px; gap:8px;">
+                <i class="fa-solid fa-right-to-bracket">
+                </i>
+                Iniciar sesión
+              </a>
+              <a href="registro.html" class="btn btn-outline btn-block" style="padding:12px; font-size:14px; gap:8px;">
+                <i class="fa-solid fa-user-plus">
+                </i>
+                Registrarme (Crear cuenta)
+              </a>
+              <a href="index.html" style="font-size:13px; color:var(--texto-muted); text-decoration:none; margin-top:6px; display:inline-block;">
+                <i class="fa-solid fa-arrow-left">
+                </i>
+                Volver a la página principal
+              </a>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:8px; font-size:12px; color:var(--texto-muted); border-top:1px solid var(--borde); padding-top:16px;">
+              <div class="logo-icon" style="width:22px; height:22px; font-size:10px; border-radius:4px;">
+                <i class="fa-solid fa-gem">
+                </i>
+              </div>
+              <strong style="color:var(--azul-noche);">
+                BancoNova
+              </strong>
+              <span>
+                • Tu futuro, en buenas manos
+              </span>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Tarjetas
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="dashboard.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="operaciones.html" class="nav-link">
+            ＋
+            <span>
+              Consignar / Retirar
+            </span>
+          </a>
+          <a href="dashboard.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Inicio
+            </span>
+          </a>
+          <a href="cuentas.html" class="nav-link">
+            <i class="fa-solid fa-wallet">
+            </i>
+            <span>
+              Cuentas
+            </span>
+          </a>
+          <a href="tarjeta.html" class="nav-link active">
+            <i class="fa-solid fa-credit-card">
+            </i>
+            <span>
+              Tarjetas
+            </span>
+          </a>
+          <a href="transferencias.html" class="nav-link">
+            <i class="fa-solid fa-arrow-right-arrow-left">
+            </i>
+            <span>
+              Transferencias
+            </span>
+          </a>
+          <a href="pagos.html" class="nav-link">
+            <i class="fa-solid fa-money-bill-transfer">
+            </i>
+            <span>
+              Pagos
+            </span>
+          </a>
+          <a href="movimientos.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left">
+            </i>
+            <span>
+              Movimientos
+            </span>
+          </a>
+          <a href="perfil.html" class="nav-link">
+            <i class="fa-solid fa-user">
+            </i>
+            <span>
+              Perfil
+            </span>
+          </a>
+          <a href="cerrar_sesion.html" class="nav-link" style="margin-top:auto; color:var(--peligro);">
+            <i class="fa-solid fa-arrow-right-from-bracket">
+            </i>
+            <span>
+              Cerrar sesión
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Tarjetas y compras
+            </strong>
+          </div>
+          <div class="topbar-actions" style="margin-left:auto;">
+            <a href="perfil.html" class="user-profile-badge">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar">
+            </a>
+          </div>
+        </header>
+        <main class="content-area">
+          <div class="greeting-header">
+            <h1>
+              Tarjeta de crédito y productos
+            </h1>
+            <p>
+              Registra lo que compras, revisa sus cuotas y elige qué producto pagar.
+            </p>
+          </div>
+          <div class="resumen-productos">
+            <section class="panel">
+              <h2>
+                Capital pendiente
+              </h2>
+              <strong id="credito-capital">
+              </strong>
+              <p>
+                Lo que falta por pagar de tus compras, sin intereses futuros.
+              </p>
+              <p id="credito-cupo">
+              </p>
+            </section>
+            <section class="panel">
+              <h2>
+                Pago mínimo simulado
+              </h2>
+              <strong id="credito-minimo">
+              </strong>
+              <p id="credito-periodo">
+              </p>
+              <p>
+                Incluye capital e interés del primer mes pendiente.
+              </p>
+            </section>
+            <section class="panel">
+              <h2>
+                Total de cuotas pendientes
+              </h2>
+              <strong id="credito-total">
+              </strong>
+              <p id="credito-intereses">
+              </p>
+              <p>
+                Suma del plan completo; no es el valor de una liquidación anticipada.
+              </p>
+            </section>
+          </div>
+          <div class="card-slider-wrapper">
+            <div class="plastic-card-preview plastic-card-primary">
+              <div class="plastic-card-top">
+                <span>
+                  BancoNova
+                </span>
+                <strong style="font-size:16px; letter-spacing:1px;">
+                  VISA
+                </strong>
+              </div>
+              <div>
+                <div style="color:#f59e0b; font-size:20px; margin-bottom:4px;">
+                  <i class="fa-solid fa-microchip">
+                  </i>
+                </div>
+                <div class="plastic-card-number">
+                  •••• 4321
+                </div>
+              </div>
+              <div class="plastic-card-bottom">
+                <div class="plastic-card-holder">
+                  <small>
+                    TITULAR (CRÉDITO)
+                  </small>
+                  <span class="txt-titular-tarjeta">
+                    Titular
+                  </span>
+                </div>
+                <div>
+                  <small style="font-size:9px; color:#cbd5e1; display:block;">
+                    VENCE
+                  </small>
+                  <span style="font-size:12px; font-weight:700;">
+                    02/28
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="plastic-card-preview plastic-card-secondary">
+              <div class="plastic-card-top">
+                <span>
+                  BancoNova
+                </span>
+                <span style="font-size:11px; color:#cbd5e1;">
+                  Mastercard
+                </span>
+              </div>
+              <div>
+                <div style="color:#f59e0b; font-size:20px; margin-bottom:4px;">
+                  <i class="fa-solid fa-microchip">
+                  </i>
+                </div>
+                <div class="plastic-card-number">
+                  •••• 8765
+                </div>
+              </div>
+              <div class="plastic-card-bottom">
+                <div class="plastic-card-holder">
+                  <small>
+                    TITULAR (DÉBITO)
+                  </small>
+                  <span class="txt-titular-tarjeta">
+                    Titular
+                  </span>
+                </div>
+                <div style="font-size:24px; color:#f97316;">
+                  <i class="fa-brands fa-cc-mastercard">
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dos-columnas">
+            <section class="panel">
+              <h2>
+                1. Agregar producto a la tarjeta
+              </h2>
+              <form onsubmit="comprar(event)" oninput="previsualizarCompra()">
+                <div class="campo">
+                  <label for="compra-nombre">
+                    Nombre del producto o compra
+                  </label>
+                  <input type="text" id="compra-nombre" maxlength="80" placeholder="Ejemplo: Nevera" required>
+                </div>
+                <div class="campo">
+                  <label for="compra-monto">
+                    Precio del producto (COP)
+                  </label>
+                  <input type="number" id="compra-monto" min="1" max="999999999" step="0.01" required>
+                </div>
+                <div class="campo">
+                  <label for="compra-cuotas">
+                    ¿En cuántas cuotas lo pagarás?
+                  </label>
+                  <input type="number" id="compra-cuotas" min="1" max="36" step="1" value="3" required>
+                </div>
+                <p class="aviso">
+                  Tasas del ejercicio: 1–2 cuotas: 0%; 3–6: 1,9% mensual; 7–36: 2,3% mensual. Interés sobre el capital pendiente.
+                </p>
+                <p id="vista-compra" class="detalle-pago" aria-live="polite">
+                  Escribe el precio y las cuotas para ver cuánto pagarías.
+                </p>
+                <button type="submit" class="btn btn-primary">
+                  Crear producto y cargar a mi tarjeta
+                </button>
+              </form>
+            </section>
+            <section class="panel">
+              <h2>
+                2. Ajustar cuotas de un producto
+              </h2>
+              <p>
+                Reparte el capital que aún debes en un nuevo número de cuotas.
+              </p>
+              <form onsubmit="ajustarCuotas(event)">
+                <div class="campo">
+                  <label for="ajuste-compra">
+                    Producto que quieres ajustar
+                  </label>
+                  <select id="ajuste-compra" onchange="previsualizarAjuste()">
+                  </select>
+                </div>
+                <div class="campo">
+                  <label for="ajuste-cuotas">
+                    Nuevas cuotas para el saldo pendiente
+                  </label>
+                  <input type="number" id="ajuste-cuotas" min="1" max="36" step="1" value="3" oninput="previsualizarAjuste()" required>
+                </div>
+                <p id="vista-ajuste" class="detalle-pago" aria-live="polite">
+                </p>
+                <p class="resumen">
+                  La tasa cambia según el nuevo plazo. Las cuotas pagadas se conservan; el plan pendiente se reemplaza.
+                </p>
+                <button id="btn-ajustar" type="submit" class="btn btn-outline">
+                  Guardar nuevo plan de cuotas
+                </button>
+              </form>
+            </section>
+          </div>
+          <section class="panel">
+            <h2>
+              3. Mis productos y lo que debo pagar
+            </h2>
+            <div id="lista-compras">
+            </div>
+            <a href="pagos.html?categoria=tarjeta" class="btn btn-primary">
+              Ir a pagar mi tarjeta
+            </a>
+          </section>
+          <section class="panel">
+            <h2>
+              Detalle de cada cuota
+            </h2>
+            <div class="campo">
+              <label for="detalle-compra">
+                Selecciona el producto para ver su plan
+              </label>
+              <select id="detalle-compra" onchange="verPlan()">
+              </select>
+            </div>
+            <p id="detalle-resumen" class="resumen">
+            </p>
+            <div class="table-card">
+              <table class="data-table">
+                <caption>
+                  Valores en pesos colombianos (COP)
+                </caption>
+                <thead>
+                  <tr>
+                    <th>
+                      Cuota
+                    </th>
+                    <th>
+                      Fecha
+                    </th>
+                    <th>
+                      Capital
+                    </th>
+                    <th>
+                      Interés / tasa mensual
+                    </th>
+                    <th>
+                      Total cuota
+                    </th>
+                    <th>
+                      Capital restante
+                    </th>
+                    <th>
+                      Estado
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="plan-cuotas">
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <p id="mensaje-tarjeta" class="mensaje" role="status" hidden>
+          </p>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/vistas.js">
+    </script>
+    <script src="js/tarjeta.js">
+    </script>
+  </body>
+</html>

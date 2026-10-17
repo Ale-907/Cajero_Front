@@ -1,0 +1,136 @@
+BANCONOVA — PRODUCTOS, CUOTAS Y GUÍA DE ESTUDIO
+
+NOVEDADES VISUALES Y GUÍA
+- Se mantienen la distribución principal y las variables de color originales.
+- Se pulieron cabeceras, accesos con íconos, tarjetas de resumen, formularios,
+  tablas y etiquetas de cuotas pagadas o pendientes. No se añadieron frameworks.
+- La guía está en documentacion/GUIA_DE_ESTUDIO.html. Ábrela en el navegador.
+- Incluye 14 sesiones, explicación de cada archivo, orden de carga, recorridos
+  de operaciones y un capítulo completo de localStorage.
+- Su laboratorio guarda y borra solo una clave de ejemplo, sin tocar el cajero.
+
+ABRIR EL PROYECTO
+1. Descomprime todo el ZIP.
+2. Abre la carpeta Cajero-Sencillo en Visual Studio Code.
+3. Abre index.html con Live Server.
+4. Registra tu usuario y luego inicia sesión.
+Mantén los HTML, style.css, script.js y la carpeta js juntos.
+No se requiere instalar paquetes para usar la aplicación.
+
+CREAR UN PRODUCTO O COMPRA EN LA TARJETA
+1. Entra a Tarjetas.
+2. Escribe el nombre del producto: por ejemplo, Nevera.
+3. Escribe el precio en COP y elige de 1 a 36 cuotas.
+4. Revisa la cuota estimada, los intereses y el total del plan.
+5. Pulsa Crear producto y cargar a mi tarjeta.
+6. En el detalle inferior, selecciona el producto para ver todas sus cuotas.
+Cada fila muestra fecha, capital, interés, tasa mensual, total a pagar,
+capital restante y estado de pago.
+El producto consume cupo por su precio, no por sus intereses futuros.
+Los productos pagados siguen visibles para consultar su historial.
+
+AJUSTAR LAS CUOTAS
+En Tarjetas, selecciona el producto y un nuevo plazo para el capital
+pendiente. Revisa el nuevo costo y confirma Guardar nuevo plan de cuotas.
+Las cuotas ya pagadas se conservan. Las pendientes se reemplazan por el
+nuevo plan, comenzando en la fecha de la próxima cuota pendiente.
+La tasa se recalcula según la nueva cantidad de cuotas pendientes.
+El ajuste no vuelve a cobrar el capital que ya pagaste ni consume más cupo.
+
+CÓMO SABER CUÁNTO DEBES
+Tarjetas y Pagos muestran tres cifras diferentes:
+- Capital pendiente: precio de las compras que todavía falta por abonar.
+- Pago mínimo simulado: cuotas pendientes del primer mes que aún no has
+  terminado de pagar. Incluye el capital y el interés de ese mes.
+- Total de cuotas pendientes: capital más todos los intereses del plan.
+Cada producto indica su próxima cuota, fecha, capital, interés y total.
+El resumen de inicio también muestra el pago mínimo y el acceso a Pagos.
+
+PAGAR UNA COMPRA O EL MÍNIMO
+1. Entra a Pagos y selecciona Mi tarjeta de crédito.
+2. Elige el pago mínimo del periodo o la próxima cuota de un producto.
+   También puedes entrar desde Pagar próxima cuota en la lista de productos.
+3. La aplicación muestra exactamente qué productos y cuotas se pagarán.
+4. Selecciona la cuenta de origen; verás su saldo disponible.
+5. Revisa el capital, el interés, el total y el saldo que quedaría.
+6. Confirma el pago. Se marcan las cuotas como pagadas y se guardan los
+   movimientos con el nombre del producto y su desglose.
+Se pagan cuotas completas. No se implementan abonos parciales ni una
+liquidación anticipada que recalcule intereses por días.
+El interés sale de la cuenta junto con el capital. Solo el capital libera
+cupo en la tarjeta.
+
+EJEMPLO DEL MÍNIMO
+Si Nevera y Celular tienen cuota pendiente en noviembre, el mínimo incluye
+ambas cuotas. Si pagas únicamente Nevera, el mínimo de noviembre baja a la
+cuota de Celular; no agrega otra cuota de Nevera del mes siguiente.
+Cuando terminas todas las cuotas de noviembre, pasa al siguiente mes
+pendiente. No hay cargos de mora ni comisión de manejo en este ejercicio.
+
+FECHAS Y TASAS DEL EJERCICIO
+La primera cuota de una compra se programa para el día 15 del próximo mes.
+Las siguientes cuotas son mensuales, también el día 15.
+Las tasas son las de la documentación original, usadas para simular:
+- 1 o 2 cuotas: 0% mensual.
+- Entre 3 y 6 cuotas: 1,9% mensual.
+- Entre 7 y 36 cuotas: 2,3% mensual.
+Se usa cuota fija, con interés calculado sobre el capital pendiente de cada
+mes. Los valores se redondean a centavos; la última cuota recoge el ajuste
+para dejar el capital en cero. El mínimo es una regla académica del
+simulador, no una política de una entidad financiera real.
+
+PAGAR SERVICIOS, RECARGAS O IMPUESTOS
+En Pagos cambia el tipo de pago. Escribe la entidad, la referencia y el
+valor. Para recargas, la referencia debe ser un celular de 10 números.
+Revisa la cuenta de origen y el resumen antes de confirmar.
+Estos pagos son simulados y quedan en Movimientos.
+
+TRANSFERENCIAS MÁS CLARAS
+1. Elige entre tus cuentas, otro banco o un número de celular.
+2. Selecciona la cuenta de origen, que muestra su saldo.
+3. Entre cuentas propias solo se ofrece como destino la otra cuenta.
+4. En envíos externos se muestran los campos del destinatario y su número.
+5. Escribe el monto y revisa destino, saldo final y comisión de $0.
+6. Confirma para registrar la operación.
+Para abonar a los productos de tu tarjeta usa Pagos, no Transferencias.
+
+COMPATIBILIDAD CON LA VERSIÓN ANTERIOR
+Se conservan el usuario, los saldos y los movimientos del navegador.
+Si había deuda de tarjeta sin productos, aparece como Saldo anterior de
+tarjeta, a una cuota sin intereses añadidos. Puedes ajustar su plazo.
+No se borran usuarios ni se vuelve a crear una cuenta de demostración.
+No se incluye hipoteca.
+
+ARCHIVOS
+index.html: portada sencilla.
+style.css: estilos y reglas responsive.
+script.js: usuarios, saldos, almacenamiento y funciones comunes.
+js/credito.js: planes de cuotas, intereses, deuda y aplicación de pagos.
+js/vistas.js: tablas, opciones y resúmenes compartidos.
+js/tarjeta.js: creación y ajuste de productos.
+js/pagos.js: selección, resumen y confirmación de pagos.
+js/transferencias.js: destinatarios, resúmenes y transferencias.
+Los demás HTML y JS conservan registro, acceso, perfil, cuentas,
+consignaciones, retiros e historial.
+Se usan objetos comunes, funciones, if y for. No se añadieron frameworks,
+clases ni dependencias necesarias para ejecutar el proyecto.
+
+ALCANCE
+Es una aplicación académica local, sin conexión bancaria ni backend.
+Los datos y las claves se guardan en localStorage: usa datos ficticios.
+Cada usuario nuevo tiene saldos y cupo de práctica. Cerrar sesión conserva
+su información. Las reglas de retiro de ahorros y sobregiro no cambiaron.
+Las transferencias y pagos requieren saldo disponible, sin sobregiro.
+La documentación original pedía POO; esta versión sencilla sigue sin
+implementar los cuatro pilares mediante clases.
+
+VERIFICACIÓN
+Se revisaron la sintaxis JavaScript, la estructura HTML y los enlaces.
+Con un DOM de prueba se verificaron las páginas, formularios, almacenamiento,
+registro, acceso, creación de compras, cupo, mínimo por periodo, pagos,
+ajustes después de pagar cuotas, conservación de historial, cancelación de
+confirmaciones, transferencias y compatibilidad con deuda anterior.
+Se comprobaron 144 planes: los 36 plazos disponibles con cuatro capitales,
+verificando que todos los abonos suman el capital y el saldo final es cero.
+Se conservan media queries y tablas desplazables para pantallas pequeñas.
+No se realizó una comprobación visual en un navegador con renderizado.

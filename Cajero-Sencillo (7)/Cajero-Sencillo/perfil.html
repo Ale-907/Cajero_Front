@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      BancoNova - Perfil de Usuario
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="dashboard.html" class="sidebar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-gem">
+            </i>
+          </div>
+          <span class="logo-text">
+            BancoNova
+          </span>
+        </a>
+        <nav class="sidebar-menu">
+          <a href="operaciones.html" class="nav-link">
+            ＋
+            <span>
+              Consignar / Retirar
+            </span>
+          </a>
+          <a href="dashboard.html" class="nav-link">
+            <i class="fa-solid fa-house">
+            </i>
+            <span>
+              Inicio
+            </span>
+          </a>
+          <a href="cuentas.html" class="nav-link">
+            <i class="fa-solid fa-wallet">
+            </i>
+            <span>
+              Cuentas
+            </span>
+          </a>
+          <a href="tarjeta.html" class="nav-link">
+            <i class="fa-solid fa-credit-card">
+            </i>
+            <span>
+              Tarjetas
+            </span>
+          </a>
+          <a href="transferencias.html" class="nav-link">
+            <i class="fa-solid fa-arrow-right-arrow-left">
+            </i>
+            <span>
+              Transferencias
+            </span>
+          </a>
+          <a href="pagos.html" class="nav-link">
+            <i class="fa-solid fa-money-bill-transfer">
+            </i>
+            <span>
+              Pagos
+            </span>
+          </a>
+          <a href="movimientos.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left">
+            </i>
+            <span>
+              Movimientos
+            </span>
+          </a>
+          <a href="perfil.html" class="nav-link active">
+            <i class="fa-solid fa-user">
+            </i>
+            <span>
+              Perfil
+            </span>
+          </a>
+          <a href="cerrar_sesion.html" class="nav-link" style="margin-top:auto; color:var(--peligro);">
+            <i class="fa-solid fa-arrow-right-from-bracket">
+            </i>
+            <span>
+              Cerrar sesión
+            </span>
+          </a>
+        </nav>
+        <p class="sidebar-caption">
+          Tu dinero, más claro.
+        </p>
+      </aside>
+      <div class="main-wrapper">
+        <header class="topbar">
+          <div class="encabezado-pagina">
+            <span>
+              BancoNova
+            </span>
+            <strong>
+              Mi perfil
+            </strong>
+          </div>
+          <div class="topbar-actions" style="margin-left:auto;">
+            <a href="perfil.html" class="user-profile-badge">
+              <img id="topbar-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80" alt="Avatar">
+            </a>
+          </div>
+        </header>
+        <main class="content-area">
+          <div class="greeting-header">
+            <h1>
+              Mi perfil
+            </h1>
+            <p>
+              Actualiza tus datos personales.
+            </p>
+          </div>
+          <section class="profile-content-card">
+            <form onsubmit="guardarPerfil(event)">
+              <div class="campo">
+                <label for="perfil-nombre">
+                  Nombre completo
+                </label>
+                <input type="text" id="perfil-nombre" required>
+              </div>
+              <div class="campo">
+                <label for="perfil-email">
+                  Correo electrónico
+                </label>
+                <input type="email" id="perfil-email" required>
+              </div>
+              <div class="campo">
+                <label for="perfil-celular">
+                  Celular
+                </label>
+                <input type="tel" id="perfil-celular" pattern="[0-9]{10}" maxlength="10" required>
+              </div>
+              <div class="campo">
+                <label for="perfil-direccion">
+                  Dirección
+                </label>
+                <input type="text" id="perfil-direccion" required>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Guardar cambios
+              </button>
+            </form>
+            <a href="cerrar_sesion.html" class="btn btn-outline" style="margin-top:16px">
+              Cerrar sesión
+            </a>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="js/credito.js">
+    </script>
+    <script src="script.js">
+    </script>
+    <script src="js/perfil.js">
+    </script>
+  </body>
+</html>
